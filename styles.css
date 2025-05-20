@@ -1018,7 +1018,7 @@ body.light-theme .about-image::before {
 }
 .service-icon {
     font-size: 2.5rem;
-    color: white;
+    color: #0f0;
     margin-bottom: 20px;
 }
 /* Service box title styling */
