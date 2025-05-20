@@ -1125,7 +1125,11 @@ body.light-theme .service-box p {
 body.light-theme .service-box:hover p {
     color: #333;
 }
-
+body.light-theme .service-icon {
+    font-size: 2.5rem;
+    color: #0f0;
+    margin-bottom: 20px;
+}
 body.light-theme .services h2 {
     color: #00f;
     text-shadow: 0 0 10px rgba(0, 0, 255, 0.7);
