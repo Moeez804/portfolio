@@ -109,201 +109,42 @@ themeToggle.addEventListener('click', () => {
         </div>
     </section>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Professional Portfolio</title>
-    <!-- Font Awesome CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <h1>Abdul Moeez</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="burger" id="burger-icon">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <!-- Theme toggle button -->
-            <button id="theme-toggle" class="theme-toggle">🌙</button>
-        </nav>
-    </header>
-    
-    <script>
-        // JavaScript for Burger Menu Toggle
-        const burgerIcon = document.querySelector('.burger');
-        const navMenu = document.querySelector('header nav ul');
-
-        burgerIcon.addEventListener('click', () => {
-            navMenu.classList.toggle('show'); // Toggle the menu visibility
-            burgerIcon.classList.toggle('open'); // Apply the 'open' class to animate the burger icon
-        });
-        // Select the theme toggle button
-const themeToggle = document.getElementById('theme-toggle');
-
-// Check for saved user preference in localStorage
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme) {
-    document.body.classList.add(currentTheme);
-    // Update button icon based on theme
-    themeToggle.textContent = currentTheme === 'dark-theme' ? '☀️' : '🌙';
-}
-
-// Add event listener for the toggle button
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-    document.body.classList.toggle('light-theme');
-
-    // Save user preference
-    const theme = document.body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme';
-    localStorage.setItem('theme', theme);
-
-    // Update button icon
-    themeToggle.textContent = theme === 'dark-theme' ? '☀️' : '🌙';
-});
-
-
-        // Optional: Detect scroll and change header background
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1>Hi, I’m <span>Abdul Moeez</span></h1>
-                <h2>IT Professional & Software Developer</h2>
-                <p>I specialize in building scalable software solutions, IT infrastructure, and cloud-based services for businesses.</p>
-                <a href="#contact" class="btn">Get in Touch</a>
-            </div>
-            <div class="hero-image">
-                <div class="profile-circle">
-                    <img src="image1.jpg" alt="Abdul Moeez">
+<!-- Services Section -->
+<section class="services" id="services">
+    <div class="container">
+        <h2>My IT Services</h2>
+        <div class="service-boxes">
+            <div class="service-box">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
                 </div>
+                <h3>Software Development</h3>
+                <p>Custom software solutions including desktop, mobile, and enterprise applications built with modern technologies.</p>
+            </div>
+            <div class="service-box">
+                <div class="service-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Responsive, user-friendly websites and web applications using HTML5, CSS3, JavaScript, and modern frameworks.</p>
+            </div>
+            <div class="service-box">
+                <div class="service-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Database Management</h3>
+                <p>Design, implementation, and optimization of SQL and NoSQL databases for performance and security.</p>
+            </div>
+            <div class="service-box">
+                <div class="service-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3>IT Consulting</h3>
+                <p>Strategic IT planning, system architecture, and technology recommendations tailored to your business needs.</p>
             </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container about-content">
-            <div class="about-image">
-                <img src="image.jpg" alt="Abdul Moeez">
-            </div>
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>Hello! I'm Abdul Moeez, an IT professional with expertise in software development, cloud technologies, and IT consulting. I help businesses optimize their IT infrastructure, improve security, and drive innovation through technology.</p>
-                <p>With experience in various programming languages, I work with cutting-edge tools and frameworks to provide tailored IT solutions that meet clients' needs.</p>
-                <a href="#portfolio" class="btn">Explore My Work</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2>My IT Services</h2>
-            <div class="service-boxes">
-                <div class="service-box">
-                    <h3>Software Development</h3>
-                    <p>Custom software solutions designed to optimize your business processes.</p>
-                </div>
-                <div class="service-box">
-                    <h3>Cloud Solutions</h3>
-                    <p>Building scalable, secure cloud infrastructures to boost productivity.</p>
-                </div>
-                <div class="service-box">
-                    <h3>Cybersecurity</h3>
-                    <p>Ensuring the security of your data and systems with industry-leading tools.</p>
-                </div>
-                <div class="service-box">
-                    <h3>IT Consulting</h3>
-                    <p>Providing strategic advice to improve IT efficiency and reduce costs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <h2>My Projects</h2>
-            <div class="project-boxes">
-                <div class="project-box">
-                    <h3>Project 1</h3>
-                    <p>Web application built with React and Node.js, focused on real-time data analytics.</p>
-                </div>
-                <div class="project-box">
-                    <h3>Project 2</h3>
-                    <p>Cloud-based solution for managing business workflows with AWS and Kubernetes.</p>
-                </div>
-                <div class="project-box">
-                    <h3>Project 3</h3>
-                    <p>Cybersecurity platform developed to protect sensitive data with AI-driven threat detection.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <form action="https://formspree.io/f/mvggbeke" class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea rows="5" placeholder="Tell me about your IT needs" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </div>
-    </section>
-    <script>
-        // Smooth scroll animation for internal links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-    </script>
-
-    <footer>
-        <p>&copy; 2024 Abdul Moeez. All Rights Reserved.</p>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/abdul-moeez-2329a2292/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="hhttps://wa.me/qr/Z5CBNZSWPKUBP1" target="_blank" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://m.me/abdul.moeez.528316" target="_blank" aria-label="facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/9866_moeez/?utm_source=ig_web_button_share_shee" target="_blank" aria-label="instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-    </footer>
-</body>
-</html>
-
+    </div>
+</section>
 
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
