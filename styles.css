@@ -1016,7 +1016,11 @@ body.light-theme .about-image::before {
     z-index: 1;
     cursor: pointer;
 }
-
+.service-icon {
+    font-size: 2.5rem;
+    color: #4e54c8;
+    margin-bottom: 20px;
+}
 /* Service box title styling */
 .services h2 {
     margin-left: 450px;
