@@ -1213,7 +1213,7 @@ body.light-theme .services h2 {
         font-size: 14px;
     }
 }
-/* Portfolio Section */
+/* ===== Portfolio Section ===== */
 .portfolio {
     top: 70px;
     padding: 80px 20px;
@@ -1226,14 +1226,13 @@ body.light-theme .services h2 {
 
 .portfolio h2 {
     font-size: 40px;
-    color: #0f0; /* Green text color */
+    color: #0f0;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 50px;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); /* Glowing effect */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
 }
 
-/* Project Boxes Container */
 .project-boxes {
     display: flex;
     gap: 30px;
@@ -1241,16 +1240,15 @@ body.light-theme .services h2 {
     flex-wrap: wrap;
 }
 
-/* Individual Project Box */
 .project-box {
     background: linear-gradient(135deg, #333, #111);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 255, 0, 0.6);
-    flex: 1 1 300px; /* Ensures the boxes scale correctly */
+    flex: 1 1 300px;
     min-width: 300px;
     max-width: 350px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
 }
 
@@ -1266,20 +1264,17 @@ body.light-theme .services h2 {
     text-transform: uppercase;
     margin-bottom: 15px;
     font-weight: bold;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); /* Glowing effect */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
 }
 
-.project-box p {
+.project-box p,
+.project-details {
     color: #ccc;
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;
-}
-.project-details {
     text-align: left;
     padding-left: 20px;
-    color: #ccc;
-    margin-bottom: 20px;
 }
 
 .project-details li {
@@ -1306,7 +1301,38 @@ body.light-theme .services h2 {
     color: #fff;
 }
 
-/* Light theme button adjustments */
+/* Light Theme Adjustments */
+body.light-theme .portfolio {
+    border: 5px dashed rgba(0, 0, 255, 0.8);
+    box-shadow: 0 0 50px rgba(0, 0, 255, 0.6), 0 0 80px rgba(0, 0, 255, 0.4);
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+body.light-theme .portfolio h2 {
+    color: #00f;
+    text-shadow: 0 0 10px rgba(0, 0, 255, 0.8);
+}
+
+body.light-theme .project-box {
+    background: linear-gradient(135deg, #fff, #f0f0f0);
+    box-shadow: 0 10px 30px rgba(0, 0, 255, 0.3);
+}
+
+body.light-theme .project-box:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 255, 0.6);
+}
+
+body.light-theme .project-box h3 {
+    color: #00f;
+    text-shadow: 0 0 10px rgba(0, 0, 255, 0.6);
+}
+
+body.light-theme .project-box p,
+body.light-theme .project-details {
+    color: #000;
+}
+
 body.light-theme .learn-more-btn {
     background-color: #00f;
     color: #fff;
@@ -1318,42 +1344,7 @@ body.light-theme .learn-more-btn:hover {
     box-shadow: 0 0 20px #00f;
 }
 
-/* Light Theme for Portfolio */
-body.light-theme .portfolio {
-    border: 5px dashed rgba(0, 0, 255, 0.8); /* Blue border */
-    box-shadow: 0 0 50px rgba(0, 0, 255, 0.6), 0 0 80px rgba(0, 0, 255, 0.4); /* Blue shadow */
-    background-color: #f9f9f9; /* Light background */
-    color: #333; /* Dark text color */
-}
-
-body.light-theme .portfolio h2 {
-    color: #00f; /* Blue text for the heading */
-    text-shadow: 0 0 10px rgba(0, 0, 255, 0.8); /* Glowing blue effect */
-}
-
-body.light-theme .project-box {
-    background: linear-gradient(135deg, #fff, #f0f0f0); /* Lighter background */
-    box-shadow: 0 10px 30px rgba(0, 0, 255, 0.3); /* Blue shadow */
-}
-
-body.light-theme .project-box:hover {
-    box-shadow: 0 15px 40px rgba(0, 0, 255, 0.6); /* Hover effect with blue shadow */
-}
-
-body.light-theme .project-box h3 {
-    color: #00f; /* Blue title */
-    text-shadow: 0 0 10px rgba(0, 0, 255, 0.6); /* Glowing blue effect */
-}
-
-body.light-theme .project-box p {
-    color: #000; /* Darker text for better readability */
-}
-
-body.light-theme .project-box:hover p {
-    color: #000; /* Dark text on hover */
-}
-
-/* Responsive Design */
+/* ===== Responsive Design ===== */
 @media (max-width: 1024px) {
     .portfolio {
         padding: 60px 20px;
@@ -1371,7 +1362,8 @@ body.light-theme .project-box:hover p {
         font-size: 22px;
     }
 
-    .project-box p {
+    .project-box p,
+    .project-details {
         font-size: 14px;
     }
 }
@@ -1386,16 +1378,12 @@ body.light-theme .project-box:hover p {
     }
 
     .project-box {
-        flex: 1 1 100%; /* Full width on smaller screens */
+        flex: 1 1 100%;
         max-width: none;
     }
 
     .project-box h3 {
         font-size: 20px;
-    }
-
-    .project-box p {
-        font-size: 14px;
     }
 }
 
