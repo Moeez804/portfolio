@@ -1275,6 +1275,49 @@ body.light-theme .services h2 {
     line-height: 1.6;
     margin-bottom: 20px;
 }
+.project-details {
+    text-align: left;
+    padding-left: 20px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.project-details li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+}
+
+/* Learn More Button */
+.learn-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0f0;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #0f0;
+    transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #0c0;
+    box-shadow: 0 0 20px #0f0;
+    color: #fff;
+}
+
+/* Light theme button adjustments */
+body.light-theme .learn-more-btn {
+    background-color: #00f;
+    color: #fff;
+    box-shadow: 0 0 10px #00f;
+}
+
+body.light-theme .learn-more-btn:hover {
+    background-color: #0066ff;
+    box-shadow: 0 0 20px #00f;
+}
+
 /* Light Theme for Portfolio */
 body.light-theme .portfolio {
     border: 5px dashed rgba(0, 0, 255, 0.8); /* Blue border */
