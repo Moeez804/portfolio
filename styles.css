@@ -1470,6 +1470,264 @@ body.light-theme .skill-card:hover {
     font-size: 14px;
   }
 }
+/* Certificates Section with Images */
+.certificates {
+  top: 70px;
+  padding: 80px 20px;
+  border: 5px solid rgba(0, 255, 0, 0.8);
+  box-shadow: 0 0 50px rgba(0, 255, 0, 0.6), 0 0 80px rgba(0, 255, 0, 0.4);
+  background: linear-gradient(120deg, #111, #000);
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+}
+
+.certificates h2 {
+  margin-bottom: 50px;
+  color: #fff;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.certificate-card {
+  background: linear-gradient(135deg, #333, #111);
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 255, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.certificate-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 255, 0, 0.1), transparent);
+  transition: transform 0.5s ease;
+  transform: scale(0);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.certificate-card:hover::before {
+  transform: scale(1);
+}
+
+.certificate-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 255, 0, 0.6);
+}
+
+/* Certificate Image Styling */
+.certificate-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.certificate-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: 15px;
+}
+
+.certificate-card:hover .certificate-image img {
+  transform: scale(1.05);
+}
+
+.certificate-icon {
+  font-size: 40px;
+  color: #0f0;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.certificate-card:hover .certificate-icon {
+  transform: scale(1.1);
+}
+
+.certificate-card h3 {
+  color: #0f0;
+  font-size: 22px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.certificate-card p {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.certificate-issuer {
+  display: inline-block;
+  color: #00bfff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.certificate-year {
+  display: inline-block;
+  background: rgba(0, 255, 0, 0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: #0f0;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 8px 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.certificate-credential {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.certificate-credential i {
+  color: #0f0;
+  margin-right: 5px;
+}
+
+/* Light Theme for Certificates */
+body.light-theme .certificates {
+  border: 5px solid rgba(0, 0, 255, 0.8);
+  box-shadow: 0 0 50px rgba(0, 0, 255, 0.6), 0 0 80px rgba(0, 0, 255, 0.4);
+  background: linear-gradient(120deg, #fff, #f9f9f9);
+}
+
+body.light-theme .certificates h2 {
+  color: #00f;
+  text-shadow: 0 0 15px rgba(0, 0, 255, 0.8);
+}
+
+body.light-theme .certificate-card {
+  background: linear-gradient(135deg, #fff, #f0f0f0);
+  box-shadow: 0 10px 30px rgba(0, 0, 255, 0.2);
+}
+
+body.light-theme .certificate-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 255, 0.4);
+}
+
+body.light-theme .certificate-icon {
+  color: #00f;
+}
+
+body.light-theme .certificate-card h3 {
+  color: #00f;
+}
+
+body.light-theme .certificate-card p {
+  color: #555;
+}
+
+body.light-theme .certificate-issuer {
+  color: #0066cc;
+}
+
+body.light-theme .certificate-year {
+  background: rgba(0, 0, 255, 0.1);
+  color: #00f;
+}
+
+body.light-theme .certificate-credential {
+  border-top-color: rgba(0, 0, 0, 0.1);
+  color: #666;
+}
+
+body.light-theme .certificate-credential i {
+  color: #00f;
+}
+
+/* Responsive Design for Certificates */
+@media (max-width: 1024px) {
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .certificates {
+    padding: 60px 15px;
+  }
+
+  .certificates h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .certificates-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .certificate-card {
+    padding: 20px;
+  }
+
+  .certificate-card h3 {
+    font-size: 20px;
+  }
+
+  .certificate-icon {
+    font-size: 35px;
+  }
+  
+  .certificate-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate-image {
+    height: 150px;
+  }
+  
+  .certificate-credential {
+    font-size: 10px;
+  }
+}
 /* Portfolio Section */
 .portfolio {
   top: 70px;
