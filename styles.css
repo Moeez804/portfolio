@@ -18,6 +18,7 @@ section {
     bottom: -5px;
     z-index: -1;
     border-radius: 25px;
+    
     background-size: 300% 300%;
     animation: animateBorder 6s infinite alternate;
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
@@ -523,11 +524,12 @@ header.scrolled {
     filter: brightness(1.2); 
 }
 
+
 .profile-circle img {
     width: 100%;
-    height: 100%;
+    height: 120%;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 40%;
     transition: transform 0.5s ease;
 }
 
@@ -721,9 +723,9 @@ body.light-theme .profile-circle::before {
 
 /* Image styles */
 .about-image img {
-    width: 100%;
+    width: 60%;
     max-width: 400px;
-    border-radius: 50%;
+    border-radius: 40%;
     border: 8px solid rgba(0, 255, 0, 0.8);
     box-shadow: 0 15px 30px rgba(0, 255, 0, 0.6);
     transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.3s ease-in-out;
@@ -742,15 +744,14 @@ body.light-theme .profile-circle::before {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 120%;
+    width: 110%;
     height: 120%;
     background: linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 0, 0, 0));
-    border-radius: 50%;
+    border-radius: 40%;
     transform: translate(-50%, -50%);
     z-index: -1;
     animation: glow-effect 4s infinite;
 }
-
 /* Glow effect keyframe */
 @keyframes glow-effect {
     0%, 100% {
@@ -1269,6 +1270,12 @@ body.light-theme .services h2 {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+.project-box ul {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+
 }
 /* Light Theme for Portfolio */
 body.light-theme .portfolio {
