@@ -1470,7 +1470,7 @@ body.light-theme .skill-card:hover {
     font-size: 14px;
   }
 }
-/* Certificates Section with Images */
+/* Certificates Section - Image Only with Hover Details */
 .certificates {
   top: 70px;
   padding: 80px 20px;
@@ -1494,39 +1494,19 @@ body.light-theme .skill-card:hover {
 
 .certificates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 20px;
 }
 
 .certificate-card {
-  background: linear-gradient(135deg, #333, #111);
-  padding: 25px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 255, 0, 0.4);
-  transition: all 0.3s ease-in-out;
   position: relative;
+  background: linear-gradient(135deg, #333, #111);
+  border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
-}
-
-.certificate-card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(0, 255, 0, 0.1), transparent);
-  transition: transform 0.5s ease;
-  transform: scale(0);
-  border-radius: 50%;
-  z-index: 0;
-}
-
-.certificate-card:hover::before {
-  transform: scale(1);
+  box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .certificate-card:hover {
@@ -1534,15 +1514,12 @@ body.light-theme .skill-card:hover {
   box-shadow: 0 20px 40px rgba(0, 255, 0, 0.6);
 }
 
-/* Certificate Image Styling */
+/* Certificate Image */
 .certificate-image {
   width: 100%;
-  height: 200px;
+  height: 280px;
   overflow: hidden;
-  border-radius: 15px;
-  margin-bottom: 20px;
   position: relative;
-  z-index: 1;
 }
 
 .certificate-image img {
@@ -1550,43 +1527,61 @@ body.light-theme .skill-card:hover {
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
-  border-radius: 15px;
 }
 
 .certificate-card:hover .certificate-image img {
-  transform: scale(1.05);
+  transform: scale(1.08);
+}
+
+/* Certificate Details - Hidden by default, shows on hover */
+.certificate-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.9));
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  transform: scale(0.9);
+}
+
+.certificate-card:hover .certificate-details {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
 }
 
 .certificate-icon {
-  font-size: 40px;
+  font-size: 45px;
   color: #0f0;
   margin-bottom: 15px;
-  transition: transform 0.3s ease;
-  position: relative;
-  z-index: 1;
+  animation: fadeInUp 0.5s ease;
 }
 
-.certificate-card:hover .certificate-icon {
-  transform: scale(1.1);
-}
-
-.certificate-card h3 {
+.certificate-details h3 {
   color: #0f0;
   font-size: 22px;
   margin-bottom: 12px;
   font-weight: bold;
   text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
-  position: relative;
-  z-index: 1;
+  animation: fadeInUp 0.5s ease 0.1s both;
 }
 
-.certificate-card p {
+.certificate-details p {
   color: #ccc;
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 15px;
-  position: relative;
-  z-index: 1;
+  animation: fadeInUp 0.5s ease 0.2s both;
 }
 
 .certificate-issuer {
@@ -1595,8 +1590,7 @@ body.light-theme .skill-card:hover {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 8px;
-  position: relative;
-  z-index: 1;
+  animation: fadeInUp 0.5s ease 0.3s both;
 }
 
 .certificate-year {
@@ -1608,24 +1602,34 @@ body.light-theme .skill-card:hover {
   font-size: 12px;
   font-weight: bold;
   margin: 8px 5px;
-  position: relative;
-  z-index: 1;
+  animation: fadeInUp 0.5s ease 0.4s both;
 }
 
 .certificate-credential {
   display: block;
-  font-size: 12px;
+  font-size: 11px;
   color: #888;
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  z-index: 1;
+  animation: fadeInUp 0.5s ease 0.5s both;
 }
 
 .certificate-credential i {
   color: #0f0;
   margin-right: 5px;
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Light Theme for Certificates */
@@ -1649,15 +1653,19 @@ body.light-theme .certificate-card:hover {
   box-shadow: 0 20px 40px rgba(0, 0, 255, 0.4);
 }
 
+body.light-theme .certificate-details {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(245, 245, 245, 0.98));
+}
+
 body.light-theme .certificate-icon {
   color: #00f;
 }
 
-body.light-theme .certificate-card h3 {
+body.light-theme .certificate-details h3 {
   color: #00f;
 }
 
-body.light-theme .certificate-card p {
+body.light-theme .certificate-details p {
   color: #555;
 }
 
@@ -1679,11 +1687,15 @@ body.light-theme .certificate-credential i {
   color: #00f;
 }
 
-/* Responsive Design for Certificates */
+/* Responsive Design */
 @media (max-width: 1024px) {
   .certificates-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
+  }
+  
+  .certificate-image {
+    height: 250px;
   }
 }
 
@@ -1702,11 +1714,15 @@ body.light-theme .certificate-credential i {
     gap: 20px;
   }
 
-  .certificate-card {
+  .certificate-image {
+    height: 240px;
+  }
+
+  .certificate-details {
     padding: 20px;
   }
 
-  .certificate-card h3 {
+  .certificate-details h3 {
     font-size: 20px;
   }
 
@@ -1714,21 +1730,20 @@ body.light-theme .certificate-credential i {
     font-size: 35px;
   }
   
-  .certificate-image {
-    height: 180px;
+  .certificate-details p {
+    font-size: 13px;
   }
 }
 
 @media (max-width: 480px) {
   .certificate-image {
-    height: 150px;
+    height: 200px;
   }
   
   .certificate-credential {
     font-size: 10px;
   }
-}
-/* Portfolio Section */
+}/* Portfolio Section */
 .portfolio {
   top: 70px;
   padding: 80px 20px;
@@ -1849,7 +1864,15 @@ body.light-theme .project-box {
 body.light-theme .project-box:hover {
   box-shadow: 0 15px 40px rgba(0, 0, 255, 0.6); /* Hover effect with blue shadow */
 }
-
+body.light-theme .project-box .btn {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 255, 1) 0%,
+    rgba(10, 10, 255, 0.8) 100%
+  );
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
+}
 body.light-theme .project-box h3 {
   color: #00f; /* Blue title */
   text-shadow: 0 0 10px rgba(0, 0, 255, 0.6); /* Glowing blue effect */
