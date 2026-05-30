@@ -1723,7 +1723,7 @@ body.light-theme .certificate-credential i {
   }
 
   .certificate-details h3 {
-    font-size: 20px;
+    font-size: 12px;
   }
 
   .certificate-icon {
@@ -1731,7 +1731,7 @@ body.light-theme .certificate-credential i {
   }
   
   .certificate-details p {
-    font-size: 13px;
+    font-size: 10px;
   }
 }
 
