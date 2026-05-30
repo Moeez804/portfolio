@@ -514,6 +514,7 @@ header.scrolled {
 
 .hero-text .btn:hover {
   transform: scale(1.1);
+  color: #fff;
   box-shadow: 0 0 30px rgba(0, 255, 0, 1);
 }
 
@@ -1813,6 +1814,7 @@ body.light-theme .certificate-credential i {
 
 .project-box .btn:hover {
   transform: scale(1.1);
+  color: #fff;
   box-shadow: 0 0 30px rgba(0, 255, 0, 1);
 }
 .project-box:hover {
